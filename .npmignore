@@ -1,0 +1,9 @@
+# Do not ship multi-GB GGUF models to the npm registry (size limits).
+# Models remain in the Git repo / Git LFS; users sync via vendor:fetch-models or GitHub.
+vendor/models/**
+!vendor/models/README.md
+!vendor/models/.gitkeep
+
+# Keep publish leaner: drop TypeScript sources inside vendor trees if any
+**/*.map
+**/tsconfig*.json

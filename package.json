@@ -1,0 +1,66 @@
+{
+  "name": "@gavin-hjw/llmflow",
+  "version": "1.0.1",
+  "description": "LLM Wiki knowledge-base scaffolder — offline qmd + bun bundled; embedding models via Git/vendor",
+  "bin": {
+    "llmflow": "bin/llmflow.js",
+    "qmd": "bin/qmd-shim.js",
+    "bun": "bin/bun-shim.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "postinstall": "node scripts/install-vendor.mjs",
+    "vendor:fetch": "node scripts/vendor-fetch.mjs",
+    "vendor:fetch-bun": "node scripts/vendor-fetch-bun.mjs",
+    "vendor:fetch-models": "node scripts/vendor-fetch-models.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "llm",
+    "wiki",
+    "cursor",
+    "skill",
+    "knowledge-base",
+    "qmd"
+  ],
+  "author": "gavin-hjw",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavin-hjw/llm-flow.git"
+  },
+  "homepage": "https://github.com/gavin-hjw/llm-flow#readme",
+  "bugs": {
+    "url": "https://github.com/gavin-hjw/llm-flow/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "templates",
+    "scripts",
+    "vendor/qmd",
+    "vendor/bun",
+    "vendor/models/README.md",
+    "vendor/models/.gitkeep",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "ora": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.5.0"
+  }
+}

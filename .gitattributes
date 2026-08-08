@@ -1,0 +1,3 @@
+# Large binaries are gitignored (see .gitignore). Install locally:
+#   npm run vendor:fetch-bun
+#   npm run vendor:fetch-models

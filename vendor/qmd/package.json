@@ -1,0 +1,7 @@
+﻿{
+  "name": "llmflow-vendor-qmd",
+  "private": true,
+  "dependencies": {
+    "@tobilu/qmd": "2.5.3"
+  }
+}
